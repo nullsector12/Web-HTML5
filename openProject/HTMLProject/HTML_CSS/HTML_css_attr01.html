@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>CSS 속성</title>
+    <meta charset="utf-8">
+    <style>
+        /*
+            CSS 에서 사용되는 단위 : px, %, em
+            32px = 2em = 200%
+            
+            
+        */
+        tr:nth-child(2)>td:nth-child(1) {
+            font-size: 16px;
+            text-align: center;
+            color : rgb(255,0,0);
+        }
+
+        tr:nth-child(3)>td:nth-child(1) {
+            font-size: 24px;
+            text-align: center;
+            color : rgb(0,255,0);
+        }
+
+        tr:nth-child(4)>td:nth-child(1) {
+            font-size: 32px;
+            text-align: center;
+            color : rgb(0,0,255);
+        }
+
+        tr:nth-child(2)>td:nth-child(2) {
+            font-size: 1em;
+            text-align: center;
+            color : #ff0000;
+        }
+
+        tr:nth-child(3)>td:nth-child(2) {
+            font-size: 1.5em;
+            text-align: center;
+            color : #00ff00;
+        }
+
+        tr:nth-child(4)>td:nth-child(2) {
+            font-size: 2em;
+            text-align: center;
+            color : #0000ff;
+        }
+
+        tr:nth-child(2)>td:nth-child(3) {
+            font-size: 100%;
+            text-align: center;
+            color: red;
+        }
+
+        tr:nth-child(3)>td:nth-child(3) {
+            font-size: 150%;
+            text-align: center;
+            color:lightgreen;
+        }
+
+        tr:nth-child(4)>td:nth-child(3) {
+            font-size: 200%;
+            text-align: center;
+            color:blue;
+        }
+        body {
+            background-image: url('../images/6952f0426b168c377d63df6b834cea21.png');
+            background-size: 300px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        div.box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #box1 {
+            border-width: thick;
+            border: 3px solid blue;
+        }
+        span{
+            border : 1px solid red;
+        }
+        #box{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+   <span>Dummy</span>
+   <div id="box">
+       <span>LoemLoemLoemLoemLoemLoemLoemLoem</span>
+   </div>
+   <span>Dummy</span>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <table>
+        <tr>
+            <th>px</th>
+            <th>em</th>
+            <th>%</th>
+        </tr>
+        <tr>
+            <td>HTML5-16px</td>
+            <td>HTML5-1em</td>
+            <td>HTML5-100%</td>
+        </tr>
+        <tr>
+            <td>HTML5-24px</td>
+            <td>HTML5-1.5em</td>
+            <td>HTML5-150%</td>
+        </tr>
+        <tr>
+            <td>HTML5-32px</td>
+            <td>HTML5-2em</td>
+            <td>HTML5-200%</td>
+        </tr>
+    </table>
+
+</body></html>

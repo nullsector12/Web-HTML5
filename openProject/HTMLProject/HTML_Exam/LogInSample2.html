@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>『쇼핑몰』 회원가입</title>
+        <meta charset="utf-8">
+        <style>
+            #div1
+            {
+               text-align: center;
+            }
+            #div2
+            {
+                padding: 50px;
+                border: 3px solid;
+                text-align: center;
+            }
+            .block_setting
+            {
+                background-color: cornflowerblue;
+                text-align: right;
+            }
+            .button_setting
+            {
+                margin-left: 150px;
+            }
+        </style>
+    </head>
+    <body>
+      <br />
+       <div id="div1">*회원 가입을 하기에 앞서 회원약관을 읽어보시기 바랍니다.</div>
+       <br />
+           <div id="div2">인터넷 쇼핑몰 『쇼핑몰』회원 약관<br />
+           <br>총칙 회원가입, 탈퇴, 서비스 이용, 교환, 환불, 정보보호, 보안, 의무, 책임</div>
+       <br/>
+        <form action="" method="get">
+            <table>
+                <tr>
+                    <td class="block_setting">위의 약관에*</td>
+                    <td><input type="checkbox" name="agree">[동의합니다]</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    *회원 정보를 입력하신 후 가입하기를 눌러주십시오. *표시는 필수입력사항입니다.</td>
+                </tr>
+                <tr>
+                    <td class="block_setting">이름*</td>
+                    <td><input type="text" name="custName"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">아이디(ID)*</td>
+                    <td><input type="text" name="custName"> 
+                    <input type="button" name="check" value="중복확인"> (문자와 숫자 4~10자리)</td>
+                </tr>
+                <tr>
+                    <td class="block_setting">비밀번호*</td>
+                    <td colspan="2"><input type="passward" name="passward"> 비밀번호 확인
+                    <input type="passward" name="passward"> (문자와 숫자 4~10자리)</td>
+                </tr>
+                <tr>
+                    <td class="block_setting">주민등록번호*</td>
+                    <td><input type="number" name="PersonalID"> - 
+                    <input type="passward" name="PersonalID"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">E-mail*</td>
+                    <td><input type="text" name="email"> 
+                    <input type="checkbox" name="mailAgree"> [정보 메일을 수신함]</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    *자택,회사주소 입력하면 상품구매시 자동으로 입력됩니다.</td>
+                </tr>
+                <tr>
+                    <td class="block_setting">자택전화</td>
+                    <td><input type="number" name="phoneNumber"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">자택주소*</td>
+                    <td><input type="number" name="postNumber-front"> - 
+                    <input type="number" name="postNumber-back"> 
+                    <input type="button" name="checkPostNum" value="우편번호검색"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">나머지주소*</td>
+                    <td><input type="text" name="lestAddress"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">비상전화*</td>
+                    <td><input type="number" name="EmgPhoneNumber"> (배송시 참조합니다.)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">*회사주소는 옵션입니다.</td>
+                </tr>
+                <tr>
+                    <td class="block_setting">회사전화</td>
+                    <td><input type="number" name="CompanyPN"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">회사주소</td>
+                    <td><input type="number" name="ComPostNumber-front"> - 
+                    <input type="number" name="ComPostNumber-back"> 
+                    <input type="button" name="checkPostNum-Com" value="우편번호검색"></td>
+                </tr>
+                <tr>
+                    <td class="block_setting">나머지주소*</td>
+                    <td><input type="text" name="lestAddress-Com"></td>
+                </tr>
+            </table>
+                   <br />
+                   <input class="button_setting" type="submit" name="regit" value="가입하기">
+                   <input class="button_setting" type="reset" name="cansel" value="취소하기">
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<title>CSS3 선택자 Selector</title>
+<meta charset="utf-8">
+<style>
+    /*
+        속성선택자
+        1. 선택자[속성이름] : 특정 속성을 가지는 태그들 선택
+        ex) input[type]
+        2. 선택자[속성이름=속성값] : 특정속성을 가지며, 속성에 특정값을 가지는 태그들 선택
+        ex) input[type=passward]
+        */
+    input {
+        height: 50px;
+        margin: 10px;
+    }
+
+    input[type] {
+        border: 3px solid blue;
+    }
+
+    input[type=text] {
+        width: 250px;
+    }
+
+    img[src$=jpg] {
+        width: 50%;
+    }
+
+    img[src$=png] {
+        width: 250px;
+    }
+
+    /*
+        후손선택 : 선택의 범위를 제한
+        선택자 : 범위 안의 선택자
+        ex)div h1{}
+    */
+    #header h1,
+    #header h2 {
+        color: red;
+    }
+
+    /*
+        자손선택 : 선택 범위 제한
+        선택자 : 부모선택자>자손선택자
+        ex) div>h1
+    */
+    #header>h1 {
+        border: 3px solid;
+    }
+
+    /*    table태그의 부모선택자는 tbody가 들어가야함
+    ex) (table>)tbody>tr>td*/
+    tbody>tr>td {
+        background-color: cadetblue;
+    }
+
+    /*
+        동위선택자 : 같은 레벨(형태)의 태그들을 기준으로 선택
+        선택자 + : 바로 뒤의 요소 선택
+        선택자 ~ : 같은 레벨의 형제 태그들 중 선택 
+    */
+    h3+h4 {
+        border: 3px solid mediumvioletred;
+    }
+
+    /*
+        반응선택자
+        선택자 :hover
+        -> 마우스 커서가 선택된 요소의 영역으로 들어갔을 때
+        선택자 :active
+        -> 마우스 커서는 선택된 요소 위에 존재하고, 마우스 왼쪽 버튼을 클릭한 상태    
+    */
+    h3:hover {
+        color: blue;
+        font-size: 32px;
+    }
+
+    h3:active {
+        color: red;
+        font-style: italic;
+    }
+
+    #myform input {
+        background-color: blueviolet;
+    }
+
+    #myform input:disabled {
+        background-color: black;
+    }
+
+    #myform input[type=checkbox] {
+        width: 150px;
+        height: 150px;
+    }
+
+    #myform input[type=checkbox]:checked {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #viewMenu+div {
+        display: none;
+    }
+
+    #viewMenu:checked+div {
+        display: block;
+    }
+
+    #nave {
+        overflow: hidden;
+    }
+
+    #nave>li {
+        list-style: none;
+        float: left;
+        padding: 5px 15px;
+    }
+
+    #nave>li:nth-child(2n+1) {
+        background-color: lightblue;
+    }
+
+    #nave>li:nth-child(2n) {
+        background-color: lightgreen;
+    }
+
+    #nave>li:first-child {
+        border: 2px solid red;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    #nave>li:last-child {
+        border: 2px solid blue;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    p::first-letter {
+        font-size: 3em;
+    }
+
+    p::first-line {
+        color: lightcoral;
+        font-weight: bold;
+    }
+
+    p::selection {
+        background-color: black;
+        color: yellow;
+    }
+
+    a:link {
+        color: rebeccapurple;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    
+</style>
+
+<body>
+    <h1>LoemLoemLoemLoemLoemLoem</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Aenean ac erat et massa vehicula laoreet consequat et sem.</p>
+    <ul id="nave">
+        <li><a href="a">1</a></li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <form id="myform">
+        <div>
+            약관보기 <input id="viewMenu" type="checkbox">
+            <div>
+                <h4>이용 약관</h4>
+                <p>
+                    문제 발생 시 목 침.
+                </p>
+            </div>
+        </div>
+        <input type="text" disabled>
+        <br>
+        <input type="text" enabled>
+        <br>
+        <input type="text" readonly>
+        <br>
+        <input type="text" required>
+        <br>
+        <input type="submit">
+        <br>
+        <input type="checkbox" checked>약관동의
+        <input type="checkbox">마케팅동의
+    </form>
+    <hr>
+    <h3>header-01</h3>
+    <h4>header-02</h4>
+    <h4>header-03</h4>
+    <h4>header-04</h4>
+
+    <table border="3">
+        <tr>
+            <td>아이디</td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+        </tr>
+    </table>
+
+    <div id="header">
+        <h1 class="title">Title</h1>
+        <h2>h2 Tag</h2>
+        <div id="nav">
+
+            <h1>Navigation</h1>
+
+        </div>
+
+        <h1>etc</h1>
+
+    </div>
+
+    <div id="selection">
+        <h1 class="title">Title</h1>
+        <p>안녕하세요</p>
+        <h2>h2 Tag</h2>
+    </div>
+    <h4>header-05</h4>
+    <form>
+        <input>
+        <br />
+        <input type="text">
+        <br />
+        <input type="password">
+        <br />
+        <img src="/images/chicken.jpg" alt="치킨">
+        <img src="/images/6952f0426b168c377d63df6b834cea21.png">
+    </form>
+</body>
+
+</html>

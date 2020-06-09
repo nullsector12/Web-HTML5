@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>실명확인 회원가입 예제</title>
+        <meta charset="utf-8">
+        <style>
+            body, div, h1, form
+            {
+                margin: 0;
+                padding: 0;
+            }
+            h1
+            {
+                margin-left: 150px;
+            }
+            #div1
+            {
+                margin-left: 250px;
+                margin-top: 10px;
+            }
+            #table
+            {
+                margin: 10px auto;
+            }
+            #button
+            {
+                padding: 10px;
+                margin: auto;
+                font-weight: bold;
+                border: 5px solid #EE55AA;
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" method="get">
+                <h1>실명확인 회원가입</h1>
+                <hr>
+                <div id="div1"><input type="checkbox" name="I-Pin" value="I-Pin">아이핀(I-Pin)
+                <input type="checkbox" name="PersonalID" value="PersonalID">주민등록번호</div>
+            <table id="table">
+<!--
+               <tr>
+                   <td><input type="checkbox" name="I-Pin" value="I-Pin">아이핀(I-Pin)<input type="checkbox" name="PersonalID" value="PersonalID">주민등록번호</td>
+               </tr>
+-->
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="username" value="고구마"></td>
+                </tr>
+                <tr>
+                    <td>주민등록번호</td>
+                    <td><input type="number" name="frontNumber" value="111111">-
+                    <input type="password" name="backNumber" value="1111111"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <input type="checkbox" name="agree">주민등록번호 처리에 동의합니다.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="button" type="submit" name="submit" value="√ 확인"></td>
+                </tr>
+             </table>
+        </form>
+        
+    </body>
+    
+</html>
