@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layout Example Preview</title>
+    <meta charset="utf-8">
+    <style>
+        #outside {
+            border: 5px solid #AAAAAA;
+            width: 1300px;
+            height: 1440px;
+            margin: 0 auto;
+        }
+
+        #line {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #InnerLine {
+            padding-left: 20px;
+            padding-right: 300px;
+            margin-top: 10px;
+        }
+
+        #header {
+            margin-left: 50px;
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #subHeader {
+            margin: 0 0px 30px 50px;
+            font-size: 13px;
+        }
+
+        #nav>a {
+            margin-left: 40px;
+            color: black;
+            text-decoration: none;
+            float: left;
+        }
+
+        #nav>div.search>input[type=text] {
+            height: 20px;
+            padding-left: 10px;
+            margin-left: 450px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #AAAAAA;
+        }
+
+        #nav>div.search>input[type=submit] {
+            height: 25px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid #AAAAAA;
+        }
+
+        #contents-01 {
+            width: 1000px;
+            height: 690px;
+            float: left;
+        }
+
+        #contents-02 {
+            width: 1000px;
+            height: 510px;
+        }
+
+        #sideBar {
+            width: 300px;
+            height: 1450px;
+            float: right;
+        }
+
+        #sideBar>h4 {
+            padding-left: 25px;
+            margin-bottom: 0;
+        }
+
+        #list>div>a {
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+
+        .cntHead {
+            font-size: 20px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+
+        .cntDate {
+            font-size: 13px;
+            margin: 10px 0px 10px 30px;
+        }
+
+        .cntImage>img {
+            margin-left: 30px;
+            width: 430px;
+            height: 280px;
+        }
+
+        .cntText {
+            margin: 10px 10px 10px 30px;
+        }
+
+        #END {
+            font-size: 20px;
+            margin-left: 20px;
+            color: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outside">
+        <div id="header">
+            HTML5 Example Preview
+        </div>
+        <p id="subHeader">AIA 아카데미</p>
+        <div id="line">
+            <hr>
+        </div>
+        <div id="wrap1">
+            <div id="nav">
+                <a id="btn-1" href="/HTML_Exam/LayoutEx.html">긴급재난지원금이란?</a>
+                <a id="btn-2" href="https://www.finance-news.co.kr/128">긴급재난지원금신청법</a>
+                <a id="btn-3" href="https://www.xn--jj0bb2kr6h965bxcbp8g.kr/checkRegForm.jsp">긴급재난지원금 신청</a>
+                <div class="search"><input type="text"><input type="submit" name="search" value="검색"></div>
+            </div>
+        </div>
+        <div id="line">
+            <hr>
+        </div>
+        <div id="wrap2">
+            <div id="contents-01">
+                <div id="cnt01Header" class="cntHead">
+                    '긴급 재난 지원금' 이란?</div>
+                <div id="cnt01Date" class="cntDate">
+                    2020년 06월 10일</div>
+                <div class="cntImage">
+                    <img src="https://img5.yna.co.kr/photo/yna/YH/2020/05/19/PYH2020051910230001300_P4.jpg"></div>
+                <div class="cntText">
+
+                    코로나19로 인한 소비심리 위축 등으로 경제적 타격을 입은 국민들의 생계와 소득을 보장하기 위해 정부에서 시행하는 현금 지원 대책을 말한다.
+                    정부는 2020년 3월 30일 중산층을 포함한 소득 하위 70%(기준 중위소득 150%)에 4인가구 기준으로 100만 원의 긴급재난지원금을 지급하기로 결정했다고 밝힌 데 이어,
+                    4월 16일에는 해당 재원 마련을 위한 7조 6000억 원 규모의 ‘코로나19 극복을 위한 2020년도 2회 추경안’을 의결해 국회에 제출했다.
+                    다만 더불어민주당과 미래통합당 모두 총선 과정에서 긴급재난지원금을 전 국민에게 주겠다는 공약을 내건 만큼,
+                    국회 논의 과정에서 지급 대상이 전 국민으로 확대될 가능성이 제기됐다. 이후 당정이 고소득층에 대한 자발적 기부를 전제로
+                    전 국민에 긴급재난지원금을 지급하기로 방침을 정한 데 이어 국회가 4월 29일 긴급재난지원금 지급을 위한 2차 추가경정예산을 의결하면서 전국 국민 지급이 결정됐다.
+
+                    <div>긴급재난지원금 지급 금액은 ▷4인 가족 100만 원 ▷3인 가족 80만 원 ▷2인 가족 60만 원 ▷1인 가족 40만 원이다.
+                        국민들은 2020년 5월 4일부터 별도 홈페이지(긴급재난지원금.kr)에서 대상자(세대주) 여부 및 가구원 수 등을 조회할 수 있다.
+                        이에 따라 긴급지원이 필요한 가구(생계급여·기초연금·장애인연금 수급가구 등 약 270만 가구)는 별도 신청이나 방문 없이 5월 4일부터 현금을 받게 되며,
+                        현금 수급 대상이 아닌 국민은 신용·체크카드, 지류·모바일·카드 지역사랑상품권, 선불카드 중 하나를 택해 지원금을 받을 수 있다.
+                        여기에 긴급재난지원금 신청 시 기부의사를 표시하거나 수령 후 근로복지공단을 통해 지원금 전액 또는 일부, 그 이상의 액수를 기부할 수 있다.
+                        또한 신청 개시일로부터 3개월 안에 신청하지 않아도 자발적 기부로 간주하며, 기부액은 2021년 연말정산을 통해 16.5%의 세액공제 혜택을 받을 수 있다.</div>
+                </div>
+            </div>
+            <div id="sideBar">
+                <h4>카테고리</h4>
+                <ul id="list">
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                </ul>
+                <br />
+                <h4>최근 글</h4>
+                <ul id="list">
+                    <div><a href="LogInSample2.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                    <div><a href="LogInSample.html">데이터</a></div>
+                </ul>
+            </div>
+            <div id="InnerLine">
+                <hr>
+            </div>
+        </div>
+        <div id="contents-02">
+            <div id="cnt01Header" class="cntHead">긴급재난지원금 제한 업종</div>
+            <div id="cnt01Date" class="cntDate">2020년 06월 10일</div>
+            <div class="cntImage"><img src="https://www.긴급재난지원금.kr/2019/info/images/sub03_table02.jpg"></div>
+            <div class="cntText">
+                신용·체크카드를 통해 긴급재난지원금을 지급한 뒤인 5월 넷째주(5월25∼31일) 8개 카드사 가맹점의 전체 매출액은 19조1천232억원으로 집계됐다.
+
+                이는 지급 직전 1주일인 5월 첫째주(5월4∼10일)의 15조7천833억원보다 21.2% 증가한 것이다. <div>전년 동기 대비로도 26.7%가 늘었다.
+
+                    8개 카드사의 전통시장 매출액도 5월 넷째주 3천243억원을 기록해 5월 첫째주보다 20%가량 늘었다.
+
+                    업종별로 5월 첫째주 대비 넷째주 매출액 증가율을 보면 안경이 66.2%로 가장 높았다.</div>
+
+                이어 병원·약국(63.8%), 학원(37.9%) 서점(34.9%), 헬스·이미용(29.4%), 가구(27.8%) 순으로 증가율이 높게 나타났다.
+
+                <div>윤종인 행안부 차관은 "긴급재난지원금이 국민 살림과 지역경제에 실질적으로 도움이 되도록 추진상황을 계속 모니터링하고 지원금이 다 소진되도록 소비촉진 캠페인도 펼치겠다"고 말했다.</div>
+            </div>
+        </div>
+        <div id="InnerLine">
+            <hr>
+        </div>
+        <div id="END">Create By ShowMeTheMoney</div>
+
+    </div>
+</body>
+
+</html>
