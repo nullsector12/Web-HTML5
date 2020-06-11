@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>하이 로우 게임</title>
+        <meta charset="utf-8">
+        <meta lang="ko">
+        <style></style>
+        <script>
+            var numArray= new Array();
+            for(i=0; i <100; i++){
+                numArray[i]=i+1;
+            }
+            // alert(numArray);
+            var goal = numArray[Math.floor(Math.random()*numArray.length)];
+            // alert(goal);
+            var count=0;
+
+            while(true) {
+                var anser = prompt('1~100 사이의 숫자를 입력해주세요', '1~100');
+                var anserNum = parseInt(anser);
+                count = count+1;
+                
+                if (anserNum > goal && count < 11) {
+                    alert('답보다 큰 숫자를 입력했습니다. 작은 수를 입력해주세요. 남은 기회 : '+(10-count))
+                    continue;
+
+                } else if (anserNum < goal && count < 11) {
+                    alert('답보다 작은 숫자를 입력했습니다. 큰 수를 입력해주세요. 남은 기회 : '+(10-count))
+                    continue;
+
+                } else if(anserNum = goal && count < 11){
+                    alert('정답입니다!' + count + '번 만에 맞추셨습니다.');
+                    break;
+
+                } else if (count = 10 ){
+                    alert('기회를 모두 사용하여 패배하셨습니다..');
+                    break;
+                }
+                break;
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
