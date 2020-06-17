@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Manager</title>
+    <style>
+        h1, h3 {
+            color: #355C7D;
+        }
+        h3 {
+            margin-left: 90px;
+        }
+        input {
+            width: 150px;
+            height: 30px;
+            margin: 5px;
+            color: #355C7D;
+        }
+
+        #regit {
+            width: 120px;
+            height: 50px;
+            border: 0px;
+            background-color: #F8B195;
+            color: #355C7D;
+            font-weight: bolder;
+            margin-left: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Member Manager</h1>
+    <hr>
+    <h3>회원등록</h3>
+    <form action="Member_Manager.html" method="post" id="regitForm">
+        <table>
+            <tr>
+                <td>아이디(이메일)</td>
+                <td><input type="email" id="userID" placeholder="아이디(이메일)"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" id="userPass" placeholder="비밀번호"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" id="userPassC" placeholder="비밀번호 확인"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" id="name" placeholder="이름"></td>
+            </tr>
+        </table>
+        <input type="submit" name="등록" value="등록" id="regit">
+    </form>
+    <br>
+    <hr>
+    <table border=1 id="saveInfo">
+        <tr>
+            <td>Index</td>
+            <td>아이디(이메일)</td>
+            <td>비밀번호</td>
+            <td>이름</td>
+            <td>관리</td>
+        </tr>
+    </table>
+    <div id="changeInfo">
+        <table>
+            <tr></tr>
+        </table>
+    </div>
+</body>
+<script src="../openProject/JavaScript/Member_Manager.js">
+</script>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Basic</title>
+    <!-- JQuery 라이브러리를 로드 : CDN 방식 -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script>
+        // $() -> window
+        // $ -> jquery
+
+        // $(선택자) -> 객체생성
+        // window.document... = $(document) ...
+        // ..ready = window.onload = function(){}
+        $(document).ready(function () {
+
+            alert('ready method')
+            // ..click = onclick = ..
+            $('.title').css('color', 'red')
+            // $('div').click(function () {
+            //     alert('h1 tag');
+            // });
+            $('ul>li').css('background', '#454545')
+
+            $('#wrap>h1').click(function () {
+                $('.end').css('color', 'red')
+            });
+
+            var val = $('input[type=text]');
+            val.val('change!');
+            alert(val.val());
+
+            // setTimeout(function () {
+            //     var selectedVal = $('#loc>option:selected');
+            //     alert(selectedVal.val());
+
+            // }, 3000);
+
+            $('tr.odd').css('background-color', '#dddddd').css('border', '2px solid black');
+            $('tr.even').css('background', '#eeeeee');
+            $('tr.first').css('background', '#ffffff');
+
+            var arr = [{
+                    name: 'NAVER',
+                    url: 'http://www.naver.com'
+                },
+                {
+                    name: 'google',
+                    url: 'http://google.com'
+                }
+            ]
+
+            var html = '';
+            $.each(arr, function (index, item) {
+                html += '<h1><a href="' + item.url + '">' + item.name + '</a></h1>'
+            });
+
+            //innerHTML = html()
+
+            $('#list').html(html);
+
+            $('h2').each(function (index, item) {
+
+                $(item).html($(item).html() + ':' + index);
+
+                if (index % 2 == 1) {
+                    $('h2').css('background-color', 'red');
+                } else {
+                    $('h2').css('background-color', 'blue');
+                }
+            });
+
+            $('h1').addClass('check');
+            $('h1').removeClass('title');
+
+
+            $('h3').css('background-color', 'orange').filter(':even').css('color', 'white').end().css(
+                'font-style', 'italic').filter(':odd').css('color', 'cyan');
+
+            var site = '';
+
+            site += '<sites>';
+            site += '   <site>';
+            site += '       <name>NAVER</name>';
+            site += '       <url>http://namver.com</url>'
+            site += '   </site>';
+            site += '</sites>';
+            site += '<sites>';
+            site += '   <site>';
+            site += '       <name>GooGld</name>';
+            site += '       <url>http://google.com</url>'
+            site += '   </site>';
+            site += '</sites>';
+
+            var xmlDoc = $.parseXML(site);
+
+            var sitehtml = '';
+
+            $(xmlDoc).find('site').each(function (index) {
+
+                var name = $(this).find('name').text();
+                var url = $(this).find('url').text();
+
+                sitehtml += '<div class="site>"';
+                sitehtml += '   <h3>'+name+'</h3>';
+                sitehtml += '   <p>'+url+'</p>';
+                sitehtml += '</div>';
+            });
+
+            $('#sites').html(sitehtml);
+
+        });
+    </script>
+    <style>
+        table {
+            width: 150px;
+            border: 2px solid black;
+        }
+
+        .title {
+            font-style: italic;
+        }
+
+        #sites>div.site {
+            width: 300px;
+            padding: 20px;
+
+            border: 1px solid #EEEEEE;
+            border-radius: 5px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="sites"></div>
+
+
+    <h3>header3 - 00</h3>
+    <h3>header3 - 01</h3>
+    <h3>header3 - 02</h3>
+    <h3>header3 - 03</h3>
+    <h3>header3 - 04</h3>
+    <h3>header3 - 05</h3>
+    <h3>header3 - 06</h3>
+    <h3>header3 - 07</h3>
+    <h3>header3 - 08</h3>
+
+    <h2>header - 00</h2>
+    <h2>header - 01</h2>
+    <h2>header - 02</h2>
+    <h2>header - 03</h2>
+    <h2>header - 04</h2>
+
+    <div id="list"></div>
+    <table>
+        <tr class="odd">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr class="even">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr class="first">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </table>
+
+    <div id="wrap">
+        <select id="loc">
+            <option value="seoul">서울</option>
+            <option value="busan">부산</option>
+            <option value="incheon">인천</option>
+            <option value="jehu">제주</option>
+        </select>
+        <input type="text" id="uid">
+        <h1 id="title h1" class="title"> 안녕하세요 </h1>
+        <h2 id="title h2" class="item"> 안녕하세요 </h2>
+        <p class="p title">
+            반갑습니다.
+        </p>
+        <ul>
+            <li>10</li>
+            <li>20</li>
+            <li>30</li>
+            <li>40</li>
+            <li>50</li>
+            <li>60</li>
+        </ul>
+
+        <p class="end">
+            bye
+        </p>
+
+    </div>
+</body>
+
+</html>
