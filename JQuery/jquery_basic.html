@@ -67,10 +67,10 @@
 
                 $(item).html($(item).html() + ':' + index);
 
-                if (index % 2 == 1) {
-                    $('h2').css('background-color', 'red');
+                if (index % 2 == 0) {
+                    $(item).css('background-color', 'red');
                 } else {
-                    $('h2').css('background-color', 'blue');
+                    $(item).css('background-color', 'blue');
                 }
             });
 
@@ -86,13 +86,11 @@
             site += '<sites>';
             site += '   <site>';
             site += '       <name>NAVER</name>';
-            site += '       <url>http://namver.com</url>'
+            site += '       <url>http://naver.com</url>';
             site += '   </site>';
-            site += '</sites>';
-            site += '<sites>';
             site += '   <site>';
             site += '       <name>GooGld</name>';
-            site += '       <url>http://google.com</url>'
+            site += '       <url>http://google.com</url>';
             site += '   </site>';
             site += '</sites>';
 
