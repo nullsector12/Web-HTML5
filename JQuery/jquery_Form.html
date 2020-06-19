@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Form Control</title>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#memo').keyup(function () {
+                // alert($(this).val());
+                var strLength = $(this).val().length;
+
+                if((50-strLength) < 0) {
+                    alert('50자 까지만 입력이 가능합니다.');
+                    // 사용자가 입력한 데이터에서 50 글자만 저장
+                    var strVal = $(this).val().substr(0, 50);
+                    $(this).val(strVal);
+                    strLength--;
+                };
+
+                $('#memo+div.cnt').text(strLength);
+
+            });
+
+            for(year = 1; year<13; year++){
+                // var selected = '';
+                // if(year = 6){
+                //     selected = 'selected';
+                // }
+                $('#month').append('<option value="'+year+'">'+year+'월</option>')
+
+            };
+
+
+        });
+    </script>
+    <style>
+        #myForm>label {
+            display: block;
+        }
+
+        input[type] {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id='myForm'>
+        <label>우편번호</label>
+        <input type="text" pattern="[]" >
+
+
+        <label for="">memo</label>
+        <textarea id="memo">
+        </textarea>
+        <div class="cnt">0</div>
+
+        <label>아이디(이메일)</label>
+        <input type="email" id="uid" required>
+
+        <label for="date">date</label>
+        <input type="date" id="date" required>
+
+        <label>dateTime</label>
+        <input type="datetime-local" id="dateTime" required>
+
+        <label for="gender1">gender</label>
+        <input type="radio" id="gender1" name="gender" value="m" checked>남자
+        <input type="radio" id="gender2" name="gender" value="f">여자
+
+        <label for="agree">개인정보 활용 동의</label>
+        <input type="checkbox" id="agree" checked>개인정보 활용에 동의합니다.
+
+        <label>년도</label>
+        <select id="year">
+            <option value="2020">2020</option>
+            <option value="2019" selected>2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+        </select>
+
+        <label>월</label>
+        <select id="month">
+
+        </select>
+        <div>
+            <input type="submit" value="입력완성">
+        </div>
+
+    </form>
+</body>
+
+</html>

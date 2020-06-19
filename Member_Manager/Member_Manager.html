@@ -5,13 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Manager</title>
+    <!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#regitForm').submit(function () {
+
+                var id = $('#userID').length();
+                var pass1 = $('#userPass').length();
+                var pass2 = $('#userPass').value();
+                var passC = $('#userPassC');
+                var name = $('#name').length();
+
+                if (id = 0) {
+                    alert('이름을 입력해주세요.')
+                    id.focus();
+                    return false;
+                }
+                if (pass1 = 0) {
+                    alert('비밀번호를 입력해주세요.')
+                    pass.focus();
+                    return false;
+                }
+                if (pass2 != passC) {
+                    alert('비밀번호가 일치하지 않습니다.')
+                    return false;
+                }
+                if (name = 0) {
+                    alert('이름을 입력해주세요.')
+                    return false;
+                }
+
+            });
+        });
+    </script> -->
     <style>
-        h1, h3 {
+        h1,
+        h3 {
             color: #355C7D;
         }
+
         h3 {
             margin-left: 90px;
         }
+
         input {
             width: 150px;
             height: 30px;
@@ -34,7 +71,7 @@
 <body>
     <h1>Member Manager</h1>
     <hr>
-    <h3>회원등록</h3>
+    <h3>회원 등록</h3>
     <form action="Member_Manager.html" method="post" id="regitForm">
         <table>
             <tr>
@@ -58,6 +95,7 @@
     </form>
     <br>
     <hr>
+    <h3>등록된 회원 목록 확인</h3>
     <table border=1 id="saveInfo">
         <tr>
             <td>Index</td>
@@ -73,7 +111,5 @@
         </table>
     </div>
 </body>
-<script src="../openProject/JavaScript/Member_Manager.js">
-</script>
-
+<script src="../openProject/JavaScript/Member_Manager.js"></script>
 </html>
