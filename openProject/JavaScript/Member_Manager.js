@@ -3,25 +3,6 @@ function member(uId, uPass, uName){
     this.userID = uId;
     this.userPass = uPass;
     this.name = uName;
-
-    this.getId = function(){
-        return userID;
-    }
-    this.getPw = function(){
-        return userPass;
-    }
-    this.getName = function(){
-        return name;
-    }
-    this.setId = function(uId){
-        userID = uId
-    }
-    this.setPw = function(uPass){
-        userPass = uPass
-    }
-    this.setName = function(uName){
-        name = uName
-    }
 };
 
 var setJsdata;
