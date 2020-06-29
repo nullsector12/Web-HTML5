@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaMurger Kiosk</title>
+    <title>JavaMurger Kiosk 김승연</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Nova+Slim&display=swap"
         rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -17,7 +17,7 @@
             // 메뉴 배열 생성
             var Hamburger = [{
                     img: '<img class="hamimg listimg" id="h1" src="HTML Project images/Hamberger/1955.png">',
-                    name: '1955',
+                    name: '1955버거',
                     price: 4500
                 },
                 {
@@ -122,7 +122,7 @@
 
 
                 hamburger += '<div class="list"><p class="img">' + this.img + '</p><p class="name">' + this.name + '</p><p class="price">' + this.price +
-                    '<span>원</span></p></div>';
+                    '</p></div>';
 
                 $('#hamburgerList').html($('#hamburgerList').html() + hamburger);
 
@@ -132,7 +132,7 @@
                 var drink = '';
 
                 drink += '<div class="list"><p class="img">' + this.img + '<p class="name">' + this.name + '</p><p class="price">' + this.price +
-                    '<span>원</span></p></div>';
+                    '</p></div>';
 
                 $('#drinkList').html($('#drinkList').html() + drink);
             });
@@ -141,7 +141,7 @@
                 var side = '';
 
                 side += '<div class="list"><p class="img">' + this.img + '<p class="name">' + this.name + '</p><p class="price">' + this.price +
-                    '<span>원</span></p></div>';
+                    '</p></div>';
 
                 $('#sideList').html($('#sideList').html() + side);
             });
@@ -150,50 +150,26 @@
                 var set = '';
 
                 set += '<div class="list"><p class="img">' + this.img + '<p class="name">' + this.name + '</p><p class="price">' + this.price +
-                    '<span>원</span></p></div>';
+                    '</p></div>';
 
                 $('#setlist').html($('#setlist').html() + set);
             });
 
             // 마우스 올렸을 시 색/커서 변환
             $('button').mouseover(function () {
-                $(this).css('cursor', 'pointer').css('background', '#FF4E50');
+                $(this).css('cursor', 'pointer').css('background', '#FF4E50').css('color', 'white');
+            });
+
+            $('.listimg').mouseover(function () {
+                $(this).css('cursor', 'pointer').css('background', '#F9D423');
             });
 
             // 마우스 땠을 시 색변환
             $('button').mouseout(function () {
-                $(this).removeAttr('style');
+                $(this).removeAttr('style').css('background', 'white').css('color', 'black');
             });
 
-            $('.hamimg').mouseover(function () {
-                $(this).css('cursor', 'pointer').css('background', '#FC913A');
-            });
-
-            $('.hamimg').mouseout(function () {
-                $(this).removeAttr('style');
-            });
-
-            $('.drinkimg').mouseover(function () {
-                $(this).css('cursor', 'pointer').css('background', '#FC913A');
-            });
-
-            $('.drinkimg').mouseout(function () {
-                $(this).removeAttr('style')
-            });
-
-            $('.sideimg').mouseover(function () {
-                $(this).css('cursor', 'pointer').css('background', '#FC913A');
-            });
-
-            $('.sideimg').mouseout(function () {
-                $(this).removeAttr('style');
-            });
-
-            $('.setimg').mouseover(function () {
-                $(this).css('cursor', 'pointer').css('background', '#FC913A');
-            });
-
-            $('.setimg').mouseout(function () {
+            $('.listimg').mouseout(function () {
                 $(this).removeAttr('style');
             });
 
@@ -207,9 +183,9 @@
                 // 전에 열렸던 메뉴가 있는지 확인 후 닫아주는 기능
                 if (toggle.is(':visible')) {
                     toggle.fadeOut();
-                    $('#drink').removeAttr('style')
-                    $('#sidedish').removeAttr('style')
-                    $('#setmenu').removeAttr('style')
+                    $('#drink').css('background', 'white');
+                    $('#sidedish').css('background', 'white');
+                    $('#setmenu').css('background', 'white');
                 }
 
 
@@ -219,29 +195,15 @@
                 // 메뉴창 클릭 시 열려있는지 확인 후 열거나 닫는 기능
                 if (scroll.is(':visible')) {
                     scroll.slideUp();
-                    $(this).removeAttr('style');
+                    $(this).css('background', 'white').css('color', 'black');
                 } else {
                     scroll.fadeIn();
-                    $(this).removeAttr('style');
+                    $(this).css('background', '#FF4E50').css('color', 'white');
                 }
 
                 // 열린 메뉴창 값을 반환
                 toggle = $('#hamburgerList');
                 return toggle;
-            });
-
-            // img 클릭 시 css 속성 제거
-            $('.hamimg').click(function(){
-                $(this).removeAttr('style');
-            });
-            $('.drinkimg').click(function(){
-                $(this).removeAttr('style');
-            });
-            $('.sideimg').click(function(){
-                $(this).removeAttr('style');
-            });
-            $('.setimg').click(function(){
-                $(this).removeAttr('style');
             });
 
             $('#drink').click(function () {
@@ -256,11 +218,11 @@
                 var scroll = $('#drinkList');
                 if (scroll.is(':visible')) {
                     scroll.slideUp();
-                    $(this).css('background', 'white')
+                    $(this).css('background', 'white').css('color', 'black')
 
                 } else {
                     scroll.fadeIn();
-                    $(this).css('background', '#FF4E50')
+                    $(this).css('background', '#FF4E50').css('color', 'white');
                 }
 
                 toggle = $('#drinkList');
@@ -279,10 +241,10 @@
                 var scroll = $('#sideList');
                 if (scroll.is(':visible')) {
                     scroll.slideUp();
-                    $(this).css('background', 'white')
+                    $(this).css('background', 'white').css('color', 'black');
                 } else {
                     scroll.fadeIn();
-                    $(this).css('background', '#FF4E50')
+                    $(this).css('background', '#FF4E50').css('color', 'white');
                 }
 
                 toggle = $('#sideList');
@@ -301,30 +263,45 @@
                 var scroll = $('#setlist');
                 if (scroll.is(':visible')) {
                     scroll.slideUp();
-                    $(this).css('background', 'white')
+                    $(this).css('background', 'white').css('color', 'black');
                 } else {
                     scroll.fadeIn();
-                    $(this).css('background', '#FF4E50')
+                    $(this).css('background', '#FF4E50').css('color', 'white');
                 }
 
                 toggle = $('#setlist');
                 return toggle;
             });
 
+            // img 클릭 시 css 속성 제거
+            $('.hamimg').click(function(){
+                $(this).removeAttr('style');
+            });
+            $('.drinkimg').click(function(){
+                $(this).removeAttr('style');
+            });
+            $('.sideimg').click(function(){
+                $(this).removeAttr('style');
+            });
+            $('.setimg').click(function(){
+                $(this).removeAttr('style');
+            });
 
             // 주문 저장할 배열
             var cartArr = [];
 
             // 클릭 시 주문리스트 배열 저장
             $('.list').click(function(){
-
+                
+                var idx = 0;
                 var saveimg = $('p.img', this).html();
                 var savename = $('p.name', this).html();
                 var saveprice = $('p.price', this).html();
                 var cnt = 1;
                 var check = -1;
                 
-                function cart(img, n, pri, cnt) {
+                function cart(idx, img, n, pri, cnt) {
+                    this.idx = idx;
                     this.saveimg = img;
                     this.savename = n;
                     this.cnt = cnt;
@@ -332,7 +309,7 @@
                 }
                 
                 if(cartArr.length < 1) {
-                    cartArr.push(new cart(saveimg, savename, saveprice, cnt));
+                    cartArr.push(new cart(idx, saveimg, savename, saveprice, cnt));
                 } else {
 
                     for(var i = 0; i < cartArr.length; i++){
@@ -342,34 +319,89 @@
                     };
 
                     if(check >= 0) {
-                            alert('중복');
+                            // alert('중복');
                             cartArr[check].cnt += 1;
                         } else {
-                            alert('중복아님');
-                            cartArr.push(new cart(saveimg, savename, saveprice, cnt));
+                            // alert('중복아님');
+                            cartArr.push(new cart(i, saveimg, savename, saveprice, cnt));
                         };
                 };
 
-                listHtml='';
+                display();
+                
+            });
+
+
+            // 주문리스트 배열에 저장한 값 장바구니에 출력
+
+            function display () { 
+                var listHtml = '';
                 for(var i = 0; i < cartArr.length; i++){
+                    
+                    var calPrice = cartArr[i].saveprice * cartArr[i].cnt;
 
-                    // listHtml +='<div>'
-                    listHtml += '   <span>'+cartArr[i].saveimg+'</span>';
-                    listHtml += '   <div class="orderWrap">'
-                    listHtml += '       <span>' +cartArr[i].savename + '</span>';
-                    listHtml += '       <span>' + cartArr[i].saveprice + '</span>';
-                    listHtml += '       <span>' + cartArr[i].cnt + '개</span>';
-                    listHtml += '   </div>'
-
-                    // listHtml += '</div>';
-                }
+                    listHtml +='    <div class="orderWrap">'
+                    listHtml +='        <span>'+cartArr[i].saveimg+'</span>';
+                    listHtml +='        <div class="ordertext">'
+                    listHtml +='            <span>' +cartArr[i].savename + '</span>';
+                    listHtml +='            <span class="'+cartArr[i].idx+'">' + cartArr[i].cnt + '개</span>';
+                    listHtml +='            <button class="'+ cartArr[i].idx + '" id="add">+</button>';
+                    listHtml +='            <span class="proprice">' + calPrice + '원</span>';
+                    listHtml +='            <button class="'+cartArr[i].idx + '" id="minus">-</button>';
+                    listHtml +='        </div>'
+                    listHtml +='    </div>';
+                    
+                };
 
                 $("#cart").html(listHtml);
 
-                console.log(cartArr);
+                var total = 0;
+                for(var i= 0; i< cartArr.length; i++){
+                    total += cartArr[i].saveprice * cartArr[i].cnt;
+                };
 
+                var totalHtml = '   <spam id="total"> 총액 :'+total+'</span>';
+                $('#totalPrice').html(totalHtml);
+
+            };
+
+
+            $(document).on("click","#minus",function(event){
+                
+                var a=$(this).attr('class');
+                // alert(a);
+                for(var i=0;i<cartArr.length;i++){
+                    if(cartArr[i].idx == a){                      
+                        if(cartArr[i].cnt<2){
+                            cartArr.splice(i,1);
+                            display();
+                        }else{
+                            cartArr[i].cnt--;
+                            display();
+                        };
+                    };
+                };
             });
 
+            $(document).on("click","#add",function(event){
+                
+                var a=$(this).attr('class');
+                // alert(a);
+                for(var i=0;i<cartArr.length;i++){
+                    if(cartArr[i].idx == a){
+                        cartArr[i].cnt++;
+                        display();
+                    };
+                };
+            });
+
+            $('#complete').click(function () {
+
+                var data = JSON.stringify(orderList);
+
+                window.open("javamuger_payment.html?val=" + data, "payment", "width=360, height=546, left=800, top=100");
+
+            });
 
         });
     </script>
@@ -396,7 +428,7 @@
             padding-left: 2px;
             height: 50px;
             display: block;
-            border-top: 1px solid #CCCCEE;
+            border-top: 2px solid #292929;
         }
 
         button {
@@ -426,7 +458,7 @@
             margin: 20px 20px 30px 20px;
             width: 200px;
             height: 150px;
-            border: 1px solid #CCCCEE;
+            border: 1px solid #292929;
         }
 
         .list {
@@ -459,35 +491,117 @@
             left: 1300px;
             width: 500px;
             top: 200px;
-            border: 1px solid #CCCCEE;
+            border: 5px solid #292929;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
 
         #cart {
-            border: 1px solid #CCCCEE;
+            /* border: 1px solid #CCCCEE; */
             margin-top: 25px;
-            margin-left: 50px;
-            margin-bottom: 25px;
-            width: 400px;
+            margin-left: 30px;
+            margin-bottom: 0px;
+            width: 450px;
             height: 250px;
             overflow: auto;
         }
 
-        #cart>span>.listimg {
+        #cart>.orderWrap {
+            margin-bottom: 30px;
+            width: 450px;
+            height: 100px;
+        }
+
+        #cart>.orderWrap>span>.listimg {
+            margin: auto;
             width: 100px;
             height: 80px;
             border: none;
+            float: left;
         }
 
-        #cart>.orderWrap>span {
+        #cart>.orderWrap>.ordertext{
+            margin-left: 100px;
+            /* margin-right: 10px; */
+            width: 350px;
+            text-align: left;
+            position: relative;
+            top:28px;
+        }
+
+        #cart>.orderWrap>.ordertext>span {
             font-family: 'Nanum Gothic', sans-serif;
         }
 
+        #cart>.orderWrap>.ordertext>.proprice {
+            padding-left: 10px;
+        }
+        #totalPrice {
+            margin-left: 150px;
+            margin-bottom: 35px;
+            margin-top: 0px;
+            
+            width: 250px;
+            height: 30px;
+            /* border: 1px solid black; */
+            text-align: right;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 30px;
+        }
+        #cart>.orderWrap>.ordertext>#add,
+        #cart>.orderWrap>.ordertext>#minus {
+            position: relative;
+            left: 250px;
+            margin-left: 15px;
+            padding: 0px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 15px;
+        }
 
+        #footer {
+            position: absolute;
+            top: 750px;
+            width: 1050px;
+            height: 250px;
+            clear: both;
+            padding: 20px;
+            /* border: 3px solid red; */
+            background-color: #292929;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
 
+        #table1 {
+            border-spacing: 0 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+            float: left;
+            color: white;
+        }
+
+        .table1_td1 {
+            color: #F9D423;
+        }
+
+        #table2 {
+            border-spacing: 0 10px;
+            color: #cdcdcd;
+        }
+
+        #footer_left {
+            float: left;
+            margin-right: 100px;
+        }
+
+        #footer_right {
+            margin-top: 30px;
+            float: left;
+        }
 
 
     </style>
-
 </head>
 
 <body>
@@ -530,10 +644,56 @@
     <div id="cart">
 
     </div>
+    <div id="totalPrice"></div>
     <div id="orderCancle"><input type="reset" value="모두 취소"></div>
-    <div id="orderComple"><input type="submit" value="선택 완료"></div>
+    <div id="orderComple"><input id="complete" type="submit" value="선택 완료"></div>
 </aside>
 <footer id="footer">
+    <div id="footer_left">
+        <table id="table1">
+            <tr>
+                <td class="table1_td1">개인정보 처리방침</td>
+            </tr>
+            <tr>
+                <td>위치정보 이용약관</td>
+            </tr>
+            <tr>
+                <td>사이트맵</td>
+            </tr>
+            <tr>
+                <td>임차문의</td>
+            </tr>
+            <tr>
+                <td>고객문의</td>
+            </tr>
+            <tr>
+                <td>인재채용</td>
+            </tr>
+        </table>
+        <table id="table2">
+            <tr>
+                <td>(주)자바머거</td>
+            </tr>
+            <tr>
+                <td>대표이사: 정신우</td>
+            </tr>
+            <tr>
+                <td>사업자등록번호: 2020-06-26</td>
+            </tr>
+            <tr>
+                <td>전화주문: 02-722-1481</td>
+            </tr>
+            <tr>
+                <td>COPYRIGHT © 2020 ALL RIGHTS RESERVED BY Java Murger</td>
+            </tr>
+        </table>
+    </div>
+    <div id="footer_right">
+        <a href="https://www.facebook.com/McDonaldsKorea" target="_blank"><img src="../HTML_Team_Project/project/image/페북.JPG"></a>
+        <a href="https://www.instagram.com/mcdonalds_kr/" target="_blank"><img src="../HTML_Team_Project/project/image/인스타.JPG"></a>
+        <a href="https://www.youtube.com/user/McDonaldsKor" target="_blank"><img src="../HTML_Team_Project/project/image/유튜브.JPG"></a>
+        <a href="https://story.kakao.com/ch/mcdonalds/feed" target="_blank"><img src="../HTML_Team_Project/project/image/카톡.JPG"></a>
+    </div>
 
 </footer>
 
